@@ -7,12 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-
-
-100.times do 
-    user_name == Faker::FunnyName.name
-    user_age == Faker::Number.digit
-
+# \\\\\\\\\\\\\\\\\\FAKE COURTS
+10.times do 
+    court_name = Faker::Address.community
+    court_location =  Faker::Address.city
+    Court.create(name: court_name, location: court_location)
 end
-User.create(name: user_name, age: user_age)
+
+
+# ///////////////////FAKE USERS
+100.times do 
+    user_name = Faker::FunnyName.name
+    user_age = Faker::Number.digit
+
+    User.create(name: user_name, age: user_age)
+end
+
+
 
