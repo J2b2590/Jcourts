@@ -10,10 +10,10 @@
     <%= f.collection_select :court_id, @courts, :id, :name %><br>
 
     <%= f.label :date %>
-    <%=f.date_select :date, order: [:month, :day] %><br>
+    <%=f.text_field :date %><br>
     
     <%= f.label :time %>
-     <%=f.time_select :time%><br>
+     <%=f.time_field :time%><br>
 
     <%= f.label :player_count %>
     <%=f.number_field :player_count%><br>
