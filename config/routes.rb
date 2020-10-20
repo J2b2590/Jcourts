@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users 
 
-  resources :games, only: [:new, :create]
+  resources :games
 
-  resources :player_games, only: [:show]
+  resources :player_games, only: [:show, :new]
 end

@@ -1,5 +1,13 @@
 class GamesController < ApplicationController
 
+    def index
+        @games = Game.all
+        @courts = Court.all
+    end
+
+    def show
+        @game = Game.find(params[:id])
+    end
 
     def new
         @game = Game.new
@@ -14,7 +22,7 @@ class GamesController < ApplicationController
         @game = Game.new(game_params)
         @user = User.find(params[:id])
         if @game.save 
-            redirect_to player_games_path(@game.player_games)
+            redirect_to games_path
         else 
             render :new 
         end 

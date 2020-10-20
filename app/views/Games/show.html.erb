@@ -1,0 +1,19 @@
+<h1></h1>
+
+Hosted By: <%= link_to @game.user.name, user_path(@game.user) %> 
+
+<br><br>
+
+Played at  <%= @game.court.name %> located <%= @game.court.location %>
+
+<br><br>
+
+Playing on <%= @game.date %> at <%= @game.time %> 
+
+<br><br>
+
+
+
+<%= link_to "Join Game", new_player_game_path%> <br><br>
+
+<%= link_to "Check Out Other Games", games_path %>
