@@ -4,3 +4,11 @@
 
 
 <h3><%= @user.name %>'s Games</h3>
+
+<ul>
+<% @user.games.each do |game| %>
+    
+<li> <%= link_to game.court.name, game_path(game) %> </li>
+
+<% end %>
+</ul>

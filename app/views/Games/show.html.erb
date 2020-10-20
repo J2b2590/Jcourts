@@ -1,16 +1,22 @@
 <h1></h1>
 
-Hosted By: <%= link_to @game.user.name, user_path(@game.user) %> 
+<p>Hosted By: <%= link_to @game.user.name, user_path(@game.user) %> </p>
 
 <br><br>
 
-Played at  <%= @game.court.name %> located <%= @game.court.location %>
+<p>Played at  <%= @game.court.name %> located <%= @game.court.location %> </p>
 
 <br><br>
 
-Playing on <%= @game.date %> at <%= @game.time %> 
+<p>Playing on <%= @game.date %> at <%= @game.time %> </p>
 
 <br><br>
+
+<p>Players</p>
+
+    <!-- <%= @player_game.user %> -->
+    <!-- Need to create a method of listing all the 
+    players that sign up for this game through player_game model -->
 
 
 

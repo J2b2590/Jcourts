@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :games
 
-  resources :player_games, only: [:show, :new]
+  resources :player_games, only: [:new, :create, :edit, :update]
 end
