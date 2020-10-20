@@ -1,6 +1,10 @@
 <h1>Games In Your City</h1>
 
 
+<% if @games.count == 0 %>
+  <p>Let's Hoop <%= link_to 'Start a Game!', new_game_url %></p>
+<% end %>
+
 <ul>
    <% @games.each do |game| %>
     <li> <%= link_to "#{game.court.name},  #{game.court.location}", game_path(game) %></li> <br><br>
