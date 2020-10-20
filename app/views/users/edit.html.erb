@@ -1,0 +1,14 @@
+<h1>EDIT PAGE FOR USER</h1>
+
+
+<%= form_for (@user) do |f|%>
+
+    <%= f.label :name%>
+    <%=f.text_field :name %><br>
+    
+    <%= f.label :age%>
+    <%=f.number_field :age%><br>
+
+    <%=f.submit%><br>
+
+<%end%>
