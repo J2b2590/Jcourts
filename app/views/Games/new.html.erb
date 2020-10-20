@@ -3,9 +3,7 @@
 
 <%= form_for (@game) do |f|%>
 
-    <label>Are you Home or Away?</label><br>
-    <%= f.select :host_id, [ 1, 2 ], :prompt => 'One for Home or Two Away' %><br>
-
+    
     <label>Court:</label><br>
     <%= f.collection_select :court_id, @courts, :id, :name %><br>
 

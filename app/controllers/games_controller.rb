@@ -4,6 +4,7 @@ class GamesController < ApplicationController
     def new
         @game = Game.new
         @courts = Court.all
+        @users = User.all
         
         # how to create a user host id
     end
@@ -11,7 +12,7 @@ class GamesController < ApplicationController
     def create
 
         @game = Game.new(game_params)
-        
+        @user = User.find(params[:id])
         if @game.save 
             redirect_to player_games_path(@game.player_games)
         else 

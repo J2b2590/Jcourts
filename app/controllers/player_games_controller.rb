@@ -4,5 +4,4 @@ class PlayerGamesController < ApplicationController
         @player_game = PlayerGame.find(params[:id])
     end
 
-
 end
