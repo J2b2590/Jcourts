@@ -3,12 +3,15 @@
 
 <%= form_for (@game) do |f|%>
 
+    <label>Are you Home or Away?</label><br>
+    <%= f.select :host_id, [ 1, 2 ], :prompt => 'One for Home or Two Away' %><br>
+
     <label>Court:</label><br>
     <%= f.collection_select :court_id, @courts, :id, :name %><br>
 
     <label>What day would you like to set your game:</label><br>
-    <%=f.date_select :date%><br>
-
+    <%=f.date_select :date, order: [:month, :day] %><br>
+    
     <label>What time would you like to make your game:</label><br>
      <%=f.time_select :time%><br>
 
