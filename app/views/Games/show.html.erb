@@ -16,7 +16,14 @@
 
 
 
+<%= link_to "Edit This Game", edit_game_path(@game) %> <br><br>
 
-<%= link_to "Join Game", new_player_game_path%> <br><br>
+ 
+<%= form_for(@game, :method => :delete, :remote => true) do |f| %>
+<%= f.submit :value => "Delete This Good for nothing, can't get the edit path right to save my life, why you got to be so damn difficult... game" %>
+<% end %>
+<br><br>
+
+<%= link_to "Add Players", new_player_game_path%> <br><br>
 
 <%= link_to "Check Out Other Games", games_path %>
