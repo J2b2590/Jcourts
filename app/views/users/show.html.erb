@@ -10,4 +10,6 @@
 <%= form_for(@user, :method => :delete, :remote => true) do |f| %>
 <%= f.submit :value => "Delete User" %>
 <% end %>
+
+<p><%= link_to "View Other Players", users_path %> </p>
 <br><br>

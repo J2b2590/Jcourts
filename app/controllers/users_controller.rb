@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         
         @user.delete
 
-        redirect_to new_user_path
+        redirect_to users_path
     end
 
     private

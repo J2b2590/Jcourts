@@ -1,6 +1,7 @@
 <h1>Playas from the Himalayas</h1>
 
 <% @users.each do |user| %>
-    <p><%= user.name %></p><br>
-    <p><%= user.age %></p>
+    <p><%= link_to user.name, user_path(user) %></p><br>
+    
+
 <% end %>

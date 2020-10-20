@@ -31,11 +31,15 @@ class GamesController < ApplicationController
     end
 
     def edit
-       
+       @users = User.all
+       @courts = Court.all
     end
 
     def update
         @game.update(game_params)
+
+        byebug
+
         if @game.save 
             redirect_to game_path(@game)
         else 
@@ -43,16 +47,6 @@ class GamesController < ApplicationController
         end
     end
 
-    
-
-    def update
-        @project = Project.find(params[:id])
-
-        @project.update(project_params(:information))
-        if @project.save 
-            redirect_to project_path(@project)
-        end
-    end
 
     def destroy
         
