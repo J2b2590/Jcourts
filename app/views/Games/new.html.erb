@@ -3,19 +3,23 @@
 
 <%= form_for (@game) do |f|%>
 
-    
-    <label>Court:</label><br>
+    <%= f.label :host_id %> 
+    <%= f.collection_select :host_id, @users, :id, :name %><br>
+
+    <%= f.label :court_id %>
     <%= f.collection_select :court_id, @courts, :id, :name %><br>
 
-    <label>What day would you like to set your game:</label><br>
+    <%= f.label :date %>
     <%=f.date_select :date, order: [:month, :day] %><br>
     
-    <label>What time would you like to make your game:</label><br>
+    <%= f.label :time %>
      <%=f.time_select :time%><br>
 
-    <label>How many people are going to play?:</label><br>
+    <%= f.label :player_count %>
     <%=f.number_field :player_count%><br>
 
     <%=f.submit%><br>
 
 <%end%>
+
+
