@@ -34,8 +34,16 @@ class UsersController < ApplicationController
         end
     end
 
+
     def show
         # @user = User.find(params[:id])
+    end
+
+    def destroy
+        
+        @user.delete
+
+        redirect_to new_user_path
     end
 
     private

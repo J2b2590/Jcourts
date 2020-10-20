@@ -20,5 +20,5 @@ Agenda for Today
         - Player count (If player count is met, can't add more people)
         - Age validation (Must be 18 to play)
         - Can't play if court is booked on date and time
-    - Create an user (new, create, edit, update)
-    - Home, root page (link to sign in)
+    - Create an user (new, create, edit, update) DONE
+    - Home, root page (link to sign in) 
