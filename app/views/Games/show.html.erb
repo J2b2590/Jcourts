@@ -14,11 +14,19 @@
 
 <h3>Players:</h3> 
 
-<% @player_games.each do |player_game| %>
+    
+    <% @player_games.each do |player_game| %>
     <ul>
-        <li><%= player_game.player.name %></li>
+        <% if player_game.game == @game %>
+            <li><%= player_game.player.name %></li>
+            <%= form_for(player_game, :method => :destroy, :remote => true) do |f| %>
+            <%= f.submit :value => "Delete Player" %>
+            <% end %>
+        <% end %>
     </ul>
-<% end %>
+    <% end %>
+
+
 <%= link_to "Add Players", new_player_game_path %> <br><br>
 
 <%= link_to "Edit This Game", edit_game_path(@game) %> <br><br>
@@ -34,4 +42,4 @@
 
 
 
-<%= button_to "Check Out Other Games", games_path %>
+<%= link_to "Check Out Other Games", games_path %>

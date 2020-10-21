@@ -3,14 +3,14 @@ class PlayerGamesController < ApplicationController
     
     def new
         @player_game = PlayerGame.new
-        @games = Game.all
+        @game = Game.find(params[:id])
         @users = User.all
     end
 
     def create
 
-        player_game = PlayerGame.create(player_game_params)
-
+        player_game = PlayerGame.new(player_game_params)
+    
         if player_game.save
             redirect_to game_path(player_game.game)
         else
@@ -26,7 +26,7 @@ class PlayerGamesController < ApplicationController
 
         redirect_to game_path(@player_game.game)
     end
-    
+
     private
 
     def player_game_params
