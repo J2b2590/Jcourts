@@ -3,6 +3,9 @@
 
 <%= form_for (@game) do |f|%>
 
+    <%= f.label :name %>
+    <%=f.text_field :name %><br>
+
      <%= f.label :host_id %> 
     <%= f.collection_select :host_id, @users, :id, :name %><br>
 
