@@ -9,7 +9,7 @@ class GamesController < ApplicationController
 
     def show
         
-        @player_games = PlayerGame.all
+        @player_games = @game.player_games
         @courts = Court.all
     end
 
