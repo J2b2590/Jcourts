@@ -8,14 +8,17 @@
 require 'faker'
 
 # \\\\\\\\\\\\\\\\\\FAKE COURTS
-# 10.times do 
-#     court_name = Faker::Address.community
-#     court_location =  Faker::Address.city
-#     Court.create(name: court_name, location: court_location)
-# end
+10.times do 
+    court_name = Faker::Address.community
+    court_location =  Faker::Address.city
+    Court.create(name: court_name, location: court_location)
+end
 
 
 # ///////////////////FAKE USERS
+
+
+
 100.times do 
     user_name = Faker::FunnyName.name
     user_age = Faker::Number.digit
