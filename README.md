@@ -9,8 +9,11 @@ Agenda for Today
         - Player count (If player count is met, can't add more people)
         - Age validation (Must be 18 to play)
         - Can't play if court is booked on date and time
+        - Can't Duplicate username
     
     - Ability join a game
+
+    
     - Ability to show all players in the game
     - Home, root page (link to sign in) 
     - Start on Equipment

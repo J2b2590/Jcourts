@@ -7,7 +7,7 @@
 
 <ul>
    <% @games.each do |game| %>
-    <li> <%= link_to "#{game.court.name},  #{game.court.location}", game_path(game) %></li> <br><br>
+    <li> <%= link_to game.name, game_path(game) %></li> <br><br>
    <% end %>
 </ul>
 

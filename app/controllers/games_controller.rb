@@ -17,7 +17,6 @@ class GamesController < ApplicationController
         @courts = Court.all
         @users = User.all
         
-        # how to create a user host id
     end
 
     def create
@@ -64,6 +63,6 @@ class GamesController < ApplicationController
       end
 
     def game_params
-        params.require(:game).permit(:host_id, :court_id, :date, :time, :player_count)
+        params.require(:game).permit(:name, :host_id, :court_id, :date, :time, :player_count)
     end
 end
