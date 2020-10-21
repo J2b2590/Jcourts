@@ -1,5 +1,10 @@
 <h1>Games New Create Page</h1>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
 
 <%= form_for (@game) do |f|%>
 
@@ -19,10 +24,12 @@
     <%= f.collection_select :court_id, @courts, :id, :name %><br>
 
     <%= f.label :date %>
-    <%=f.text_field :date %><br>
+    <%=f.date_field :date %><br>
     
     <%= f.label :time %>
-     <%=f.number_field :time%><br>
+     <%= f.time_field :time, value: "%H:%M" %><br>
+
+   
 
     <%= f.label :player_count %>
     <%=f.number_field :player_count%><br>

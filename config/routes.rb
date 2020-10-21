@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :games
 
-  resources :player_games, only: [:new, :create]
+  resources :player_games
 
 end
