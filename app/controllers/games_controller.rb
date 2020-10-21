@@ -22,11 +22,12 @@ class GamesController < ApplicationController
     def create
         @game = Game.create(game_params)
 
-        if @game.save 
-            redirect_to games_path
-        else 
-            render :new 
-        end 
+        if @game.save
+            redirect_to game_path(@game)
+        else
+            flash[:errors] = @game.errors.full_messages
+            redirect_to new_game_path(@game)
+        end
     end
 
     def edit
@@ -36,8 +37,6 @@ class GamesController < ApplicationController
 
     def update
         @game.update(game_params)
-
-        byebug
 
         if @game.save 
             redirect_to game_path(@game)

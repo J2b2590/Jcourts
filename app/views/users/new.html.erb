@@ -3,11 +3,17 @@
 
 <%= form_for (@user) do |f|%>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
     <%= f.label :name%>
     <%=f.text_field :name %><br>
     
     <%= f.label :age%>
-    <%=f.number_field :age %><br>
+    <%=f.number_field :age%><br>
 
     <%=f.submit%><br>
 

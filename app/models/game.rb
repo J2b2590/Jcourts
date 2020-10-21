@@ -5,7 +5,9 @@ class Game < ApplicationRecord
     has_many :player_games
     has_many :players, :class_name => 'User', through: :player_games
 
-
+    validates :name, uniqueness: true
+    validates :name, :date, presence: true
+   
 
     def clean_date
 
@@ -14,6 +16,22 @@ class Game < ApplicationRecord
         date.strftime("%a, %d %b %Y")
     end
 
+    def clean_time
+        time = self.time
+
+
+        time.strftime("%r")
+    end
+
+    def timezone
+        time = self.time
+
+        if time < 12 
+            return "am"
+        else
+            return "pm"
+        end
+    end
 
 end
 
