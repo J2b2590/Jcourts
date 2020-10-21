@@ -14,7 +14,8 @@ class PlayerGamesController < ApplicationController
         if player_game.save
             redirect_to game_path(player_game.game)
         else
-            flash[:errors] = player_game.errors.full_messages
+            flash.errors = player_game.errors.full_messages
+            
             redirect_to new_player_game_path
         end
     end
