@@ -3,7 +3,7 @@ class PlayerGamesController < ApplicationController
     
     def new
         @player_game = PlayerGame.new
-        @game = Game.find(params[:id])
+        @game = Game.all
         @users = User.all
     end
 
@@ -21,9 +21,11 @@ class PlayerGamesController < ApplicationController
     end
 
     def destroy
-        
-        @player_game.delete
+        @player_game = PlayerGame.find(params[:id])
+        byebug
 
+        @player_game.destroy
+        
         redirect_to game_path(@player_game.game)
     end
 
