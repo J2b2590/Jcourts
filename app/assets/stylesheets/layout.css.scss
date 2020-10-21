@@ -2,15 +2,19 @@
 
 
 .nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        background-color:rgb(255,165,0);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 15px ,15px;
+    background-color: orange;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   .nav_top{
-      padding: 20px;
+    padding: 20px;
+    font-size: 20px;
+    color: purple;
+    margin: auto;
   }
