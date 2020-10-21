@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :player_games
 
+  resources :courts
+
 end

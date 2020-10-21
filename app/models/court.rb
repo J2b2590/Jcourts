@@ -16,11 +16,12 @@ class Court < ApplicationRecord
 
         park.each do |park_hash|
             if park_hash["facility_name"] == "BASKETBALL COURT"
-                basketball_court << park_hash["park"]
+                # x = park_hash["location"]["latitude"]
+                # y = park_hash["location"]["longitude"]
+                basketball_court << park_hash["park"] 
             end
         end
-
         basketball_court.uniq
-    
     end
+
 end
