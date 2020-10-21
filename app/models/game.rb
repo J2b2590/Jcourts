@@ -4,6 +4,17 @@ class Game < ApplicationRecord
 
     has_many :player_games
     has_many :players, :class_name => 'User', through: :player_games
+
+
+
+    def clean_date
+
+        date = Date.parse(self.date)
+
+        date.strftime("%a, %d %b %Y")
+    end
+
+
 end
 
 

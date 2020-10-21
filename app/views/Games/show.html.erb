@@ -6,7 +6,7 @@
 
 <br><br>
 
-<p>Playing on <%= @game.date.to_s %> at <%= @game.time %> </p>
+<p>Playing on <%= @game.clean_date %> at <%= @game.time %> </p>
 
 <br><br>
 
@@ -19,7 +19,7 @@
         <li><%= player_game.player.name %></li>
     </ul>
 <% end %>
-<%= button_to "Add Players", new_player_game_path%> <br><br>
+<%= link_to "Add Players", new_player_game_path %> <br><br>
 
 <%= link_to "Edit This Game", edit_game_path(@game) %> <br><br>
 
