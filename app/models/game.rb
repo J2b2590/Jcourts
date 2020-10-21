@@ -5,7 +5,7 @@ class Game < ApplicationRecord
     has_many :player_games
     has_many :players, :class_name => 'User', through: :player_games
 
-    
+    validates :name, presence: true
 end
 
 

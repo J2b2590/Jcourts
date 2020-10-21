@@ -25,6 +25,7 @@ class GamesController < ApplicationController
         if @game.save 
             redirect_to games_path
         else 
+            flash[:errors] = @game.errors.full_messages
             render :new 
         end 
     end
@@ -36,8 +37,6 @@ class GamesController < ApplicationController
 
     def update
         @game.update(game_params)
-
-        byebug
 
         if @game.save 
             redirect_to game_path(@game)
