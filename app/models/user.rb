@@ -3,4 +3,9 @@ class User < ApplicationRecord
 
     has_many :games, :foreign_key => 'host_id'
 
+    validates :name, uniqueness: true
+
+
+
+
 end

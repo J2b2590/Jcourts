@@ -2,12 +2,18 @@
 
 
 <%= form_for (@user) do |f|%>
+<% if !!flash[:errors] %>
+2  <% flash[:errors].each do |e| %>
+3    <p><%= e %></p> <br>
+4    <% end %>
+5  <% end %>
+
 
     <%= f.label :name%>
     <%=f.text_field :name %><br>
     
     <%= f.label :age%>
-    <%=f.number_field :age %><br>
+    <%=f.number_field :age%><br>
 
     <%=f.submit%><br>
 
