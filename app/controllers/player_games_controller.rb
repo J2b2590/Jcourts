@@ -20,6 +20,13 @@ class PlayerGamesController < ApplicationController
         end
     end
 
+    def destroy
+        
+        @player_game.delete
+
+        redirect_to game_path(@player_game.game)
+    end
+    
     private
 
     def player_game_params
