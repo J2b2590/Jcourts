@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-    belongs_to :court
+    belongs_to :court, optional: true
     belongs_to :user, :foreign_key => "host_id"
 
     has_many :player_games

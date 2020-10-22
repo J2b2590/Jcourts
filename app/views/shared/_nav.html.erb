@@ -1,10 +1,17 @@
 
 
-<div class= "nav">
+
     
-    <h4 class="nav_top"><%= link_to "Courts", courts_path %></h4>
-    <h4 class="nav_top"><%= link_to "Games", games_path %></h4>
-    <h4 class="nav_top"><%= link_to "Players", users_path %></h4>
-    <h4 class="nav_top"><%= link_to "Create Game", new_game_path %></h4>
-    <h4 class="nav_top"><%= link_to "Create New Profile", new_user_path %></h4>
-</div>
+
+    <nav class="nav navbar navbar-light">
+    <form class="form-inline">
+    <button class="btn btn-nav btn-outline-success" type="button"><%= link_to "Courts", courts_path %></button>
+    <button class="btn btn-nav btn-outline-success" type="button"><%= link_to "Games", games_path %></button>
+    <button class="btn btn-nav btn-outline-success" type="button"><%= link_to "Players", users_path %></button>
+    <button class="btn btn-nav btn-outline-success" type="button"><%= link_to "Create Game", new_game_path %></button>
+    <button class="btn btn-nav btn-outline-success" type="button"><%= link_to "Create New Profile", new_user_path %></button>
+
+    
+    </form>
+</nav>
+    

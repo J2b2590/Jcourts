@@ -15,9 +15,9 @@
      <%= f.label :host_id %> 
     <%= f.collection_select :host_id, @users, :id, :name %><br>
 
-    <%= f.label :court %>
+    <%= f.label :court_id %>
+    <%= f.collection_select :host_id, @courts, :id, :name %><br>
     
-    <%= f.collection_select :court, @chicago_courts, :id, :id %><br>
     
  
     <%= f.label :date %>
