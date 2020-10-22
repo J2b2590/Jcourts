@@ -17,4 +17,6 @@ Playmaking Badges- Ability to make plays for teammates
 Def/Reb Badges - Ability to stop opponent team from scoring and create turnovers
 Finishing Badges - Ability to finish at the rim or above the rim
 
+
+<!-- <%= f.collection_select :court_id, @chicago_courts,:to_s, :to_s, include_blank: false%><br> -->
     
