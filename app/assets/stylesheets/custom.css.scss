@@ -29,7 +29,8 @@
  
 
  .container{
-
+     
+    position: relative;
     margin: auto;
     margin-top: 5%;
     width: 50%;
@@ -38,5 +39,9 @@
     padding: 10px;
     background-color: white;
 
+ }
+
+ .new_user{
+    margin: 10%;
  }
  
