@@ -8,7 +8,7 @@
  }
 
  .btn-nav{
-    height: 100px;
+    height: 110px;
     padding: 15px ,15px;
     background-color: rgba(69, 56, 26, 0.577);
     border-bottom-left-radius: 5px;
@@ -16,11 +16,27 @@
  }
 
 
- body{
-     background-image: url("background.svg"); 
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
+ body, html {
+    height: 100%;
+    margin: 0;background-image: url("background.svg"); 
+    height: 100%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ 
+
+ .container{
+
+    margin: auto;
+    margin-top: 5%;
+    width: 50%;
+    height: 500px;
+    border: 3px solid green;
+    padding: 10px;
+    background-color: white;
+
  }
  
