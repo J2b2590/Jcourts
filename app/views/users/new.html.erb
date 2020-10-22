@@ -1,32 +1,31 @@
 
 
-<div class="container" style="background-color: white">
-<div class="new_user">
-<div class="row justify-content-md-center">
-<h1>USER New Create Page</h1>
-<%= form_for (@user) do |f|%>
+<div class="container">
+    <div class="new_user">
+        <div class="row justify-content-md-center">
 
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-        <p style = " color : red " ><%= error %></p>
-    <% end %>
-   <% end %>
-    <div class="col col-lg-2">
-      <%= f.label :name%><br>
-    <%=f.text_field :name %><br>
+        <h1>Sign up to ball</h1>
+        <%= form_for (@user) do |f|%>
+
+        <% if flash[:errors] %>
+            <% flash[:errors].each do |error| %>
+                <p style = "color : red" ><%= error %></p>
+            <% end %>
+        <% end %>
+            <div class="col col-md-6">
+                <%= f.label :name%><br>
+                <%=f.text_field :name %><br>
+            </div>
+        
+            <div class="col col-md-6">
+                <%= f.label :age%>
+                <%=f.number_field :age%><br>
+            </div>
+            <div class="col col-lg-2">
+                <%=f.submit%><br>
+            </div>
+
+        <%end%>
+        </div>
     </div>
-   
-    <div class="col col-lg-2">
-     <%= f.label :age%>
-    <%=f.number_field :age%><br>
-    </div>
-    <div class="col col-lg-2">
-     <%=f.submit%><br>
-     </div>
-
-<%end%>
-</div>
-  </div>
-
-
 </div>

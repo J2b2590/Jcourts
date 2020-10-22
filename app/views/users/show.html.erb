@@ -1,21 +1,22 @@
 
 <div class="container overflow-auto">
-<h1><%= @user.name %></h1>
+<div class="new_user">
+<h1><%= @user.name.capitalize %></h1>
 
 <h5>Age: <%= @user.age %></h5>
 
 
-<h3><%= @user.name %>'s Games</h3>
+<h3><%= @user.name.capitalize %>'s Games</h3>
 
 
-<h3><%= @user.name %>'s Abilities</h3>
+<h3><%= @user.name.capitalize %>'s Abilities</h3>
 <ul>
     <% @user.player_skills.each do |player_skill| %>
     <li><%= player_skill.skill.name %> Level: <%= player_skill.level %></li>
     <% end %>
 </ul>
 
-<h3><%= @user.name %>'s Reviews</h3>
+<h3><%= @user.name.capitalize %>'s Reviews</h3>
 <ul>
     <% @user.user_reviews.each do |user_review| %>
         <li> 
@@ -37,4 +38,5 @@
 
 <p><%= link_to "View Other Players", users_path %> </p>
 <br><br>
+</div>
 </div>
