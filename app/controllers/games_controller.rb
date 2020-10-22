@@ -18,6 +18,7 @@ class GamesController < ApplicationController
         @game = Game.new
         @courts = Court.all
         @users = User.all
+        @chicago_courts = Court.chicago_ball_parks
         
     end
 

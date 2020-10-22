@@ -1,7 +1,9 @@
 <h1 class="user_title">Players Signed Up</h1>
 
-<div class="d-flex players">
+<div class="players ">
 <% @users.each do |user| %>
-    <h3 class="user_names"><%= link_to user.name, user_path(user) %></h3>
+    <h3 class="user_names my-2"><%= link_to user.name, user_path(user), class:"btn btn-home btn-primary" %></h3>
+    <br>
 <% end %>
+
 </div>
