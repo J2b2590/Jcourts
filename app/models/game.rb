@@ -12,7 +12,7 @@ class Game < ApplicationRecord
 
     def clean_date
 
-        date = Date.parse(self.date)
+        date = self.date
 
         date.strftime("%a, %d %b %Y")
     end
@@ -20,18 +20,7 @@ class Game < ApplicationRecord
     def clean_time
         time = self.time
 
-
         time.strftime("%r")
-    end
-
-    def timezone
-        time = self.time
-
-        if time < 12 
-            return "am"
-        else
-            return "pm"
-        end
     end
 
 
