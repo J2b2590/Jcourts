@@ -7,7 +7,8 @@ class Game < ApplicationRecord
 
 
     validates :name, uniqueness: true
-    validates :name, :date, presence: true
+    validates :name, :date, :player_count, presence: true
+    validates :player_count, numericality: { greater_than: 1}
    
 
     def clean_date
