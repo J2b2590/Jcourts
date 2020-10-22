@@ -25,6 +25,9 @@ gem 'faker'
 gem 'soda-ruby'
 gem 'rest-client'
 
+gem "bootstrap-sass", "2.3.1.0"
+
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

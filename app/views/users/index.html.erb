@@ -1,6 +1,7 @@
-<h1>Playas from the Himalayas</h1>
+<h1 class="user_title">Players Signed Up</h1>
 
+<div class="d-flex players">
 <% @users.each do |user| %>
-    <p><%= link_to user.name, user_path(user) %></p><br>
-    
+    <h3 class="user_names"><%= link_to user.name, user_path(user) %></h3>
 <% end %>
+</div>

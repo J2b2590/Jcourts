@@ -2,6 +2,10 @@
 
 
 .nav {
+    background-image: url("Ball.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
