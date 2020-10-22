@@ -1,5 +1,11 @@
 <h1>Add Players to Game</h1>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
 <%= form_for @player_game do |f| %>
     <%= f.label :game_id %>
     <%= f.collection_select :game_id, @game, :id, :name %>
