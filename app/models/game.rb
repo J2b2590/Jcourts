@@ -25,6 +25,7 @@ class Game < ApplicationRecord
     end
 
     def pg_count
+        
         self.player_games.count + 1
     end
 
