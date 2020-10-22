@@ -24,6 +24,13 @@ class Game < ApplicationRecord
         time.strftime("%r")
     end
 
+    def pg_count
+        self.player_games.count + 1
+    end
+
+    def players_left
+        self.player_count - self.pg_count
+    end
 
 end
 
