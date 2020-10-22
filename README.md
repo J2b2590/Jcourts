@@ -3,19 +3,18 @@
 - Joshua 
   
 
-Agenda for Today
+Adds
     
     - Validations 
         - Player count (If player count is met, can't add more people)
-        - Age validation (Must be 18 to play)
         - Can't play if court is booked on date and time
-        - Can't Duplicate username
-    
-    - Ability join a game
-
-    
-    - Ability to show all players in the game
     - Home, root page (link to sign in) 
     - Start on Equipment
-    - Update Users, add attributes
-    - Stops a user from joining a game if the count is met
+    
+
+Shooting Badges - Ability to catch and shoot and/or shoot off the dribble
+Playmaking Badges- Ability to make plays for teammates
+Def/Reb Badges - Ability to stop opponent team from scoring and create turnovers
+Finishing Badges - Ability to finish at the rim or above the rim
+
+    

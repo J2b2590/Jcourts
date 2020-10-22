@@ -1,0 +1,20 @@
+<h1>Create A New Skill</h1>
+
+
+<%= form_for (@skill) do |f|%>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
+    <%= f.label :name%>
+    <%=f.text_field :name %><br>
+    
+    <%= f.label :description%>
+    <%=f.text_field :description%><br>
+
+    <%=f.submit%><br>
+
+<%end%>

@@ -5,6 +5,28 @@
 
 <h3><%= @user.name %>'s Games</h3>
 
+
+<h3><%= @user.name %>'s Abilities</h3>
+<ul>
+    <% @user.player_skills.each do |player_skill| %>
+    <li><%= player_skill.skill.name %> Level: <%= player_skill.level %></li>
+    <% end %>
+</ul>
+
+<h3><%= @user.name %>'s Reviews</h3>
+<ul>
+    <% @user.user_reviews.each do |user_review| %>
+        <li> 
+            <strong><%= user_review.title %></strong> 
+            <br><br> 
+            <%= user_review.body %>
+            <br><br>Rating: 
+            <%= user_review.rating %>/10
+        </li>
+    <% end %>
+</ul>
+
+
 <%= link_to "Edit yourself", edit_user_path(@user) %> <br><br>
 
 <%= form_for(@user, :method => :delete, :remote => true) do |f| %>

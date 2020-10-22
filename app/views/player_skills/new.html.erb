@@ -1,0 +1,27 @@
+<h1>Add Skill to Player</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
+<%= form_for @player_skill do |f| %>
+    <%= f.label :player_id %>
+    <%= f.collection_select :player_id, @users, :id, :name %>
+
+    <br><br>
+
+    <%= f.label :skill_id %>
+    <%= f.collection_select :skill_id, @skills, :id, :name %>
+
+    <br><br>
+
+    <%= f.label :level %>
+    <%= f.number_field :level %>
+
+    <br><br>
+
+    <%= f.submit "Add Skill" %> 
+
+<% end %>

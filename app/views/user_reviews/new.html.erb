@@ -1,0 +1,32 @@
+<h1>Review Players</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
+<%= form_for @user_review do |f| %>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, @users, :id, :name %>
+
+    <br><br>
+
+    <%= f.label :title %>
+    <%= f.text_field :title%>
+
+    <br><br>
+
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+
+    <br><br>
+
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+
+    <br><br>
+
+    <%= f.submit "Add Review" %> 
+
+<% end %>

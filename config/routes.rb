@@ -8,4 +8,11 @@ Rails.application.routes.draw do
 
   resources :courts
 
+  resources :user_reviews
+
+  resources :skills
+
+  resources :player_skills
+
+  root 'player_games#show'
 end
