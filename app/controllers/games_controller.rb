@@ -23,7 +23,7 @@ class GamesController < ApplicationController
     end
 
     def create
-        @game = Game.create(game_params)
+        @game = Game.new(game_params)
     
 
         if @game.save
@@ -69,6 +69,6 @@ class GamesController < ApplicationController
       end
 
     def game_params
-        params.require(:game).permit(:name, :host_id, :court, :date, :time, :player_count)
+        params.require(:game).permit(:name, :host_id, :court_id, :date, :time, :player_count)
     end
 end
