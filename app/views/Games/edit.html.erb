@@ -5,6 +5,13 @@
 
 <%= form_for (@game) do |f|%>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = " color : red " ><%= error %></p>
+    <% end %>
+   <% end %>
+
+
     <%= f.label :host_id %> 
     <%= f.collection_select :host_id, @users, :id, :name %><br>
 

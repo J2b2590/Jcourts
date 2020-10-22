@@ -23,8 +23,8 @@ class GamesController < ApplicationController
     end
 
     def create
-        @game = Game.create(game_params)
-
+        @game = Game.new(game_params)
+    
 
         if @game.save
             redirect_to game_path(@game)
@@ -38,6 +38,7 @@ class GamesController < ApplicationController
     def edit
        @users = User.all
        @courts = Court.all
+       @chicago_courts = Court.chicago_ball_parks
     end
 
     def update
@@ -46,6 +47,7 @@ class GamesController < ApplicationController
         if @game.save 
             redirect_to game_path(@game)
         else 
+            flash[:errors] = @game.errors.full_messages
             render :edit
         end
     end
