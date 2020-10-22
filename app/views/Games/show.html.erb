@@ -23,12 +23,7 @@
 <h3>Players:</h3> 
     <ul>
         <li><%= link_to @game.user.name, user_path(@game.user) %>
-        <!--<% @player_games.each do |player_game| %>
-            
-                
-                <li><%= link_to player_game.player.name, user_path(player_game.player) %></li>
-            
-        <% end %>-->
+        
     </ul>
 
 <%= link_to "Add Players", new_player_game_path %> <br><br>
