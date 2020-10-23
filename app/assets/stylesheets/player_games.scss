@@ -1,3 +1,24 @@
 // Place all the styles related to the Player_Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em
+  }
+
+h2 {
+    color: rgb(145, 110, 110);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5 em;
+    width: 17em
+  }
+
+  div.container {
+     
+     background-image: url("Dudes.jpg")
+  }
+  
