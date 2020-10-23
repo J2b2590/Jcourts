@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
     belongs_to :court, optional: true
-    belongs_to :user, :foreign_key => "host_id"
+    belongs_to :user, :foreign_key => "host_id", optional: true
 
     has_many :player_games
     has_many :players, :class_name => 'User', through: :player_games
@@ -26,7 +26,7 @@ class Game < ApplicationRecord
 
     def pg_count
         
-        self.player_games.count + 1
+        self.players.size + 1
     end
 
     def players_left

@@ -45,6 +45,9 @@
         <div class="col-md-6" >
                 <ul>
                     <li><%= link_to @game.user.name, user_path(@game.user) %> 
+                    <% @players.each do |player| %>
+                    <li><%= link_to player.name, user_path(player) %></li>
+                    <% end %>
                 </ul>
         </div>
     </div>
