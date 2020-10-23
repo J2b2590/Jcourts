@@ -1,45 +1,78 @@
 
-<div class="container">
-<h1><%= @game.name %></h1>
+<div class="container overflow-auto">
+<div class="row">
+    <div class="col-md-12" style="text-align: center">
+    <h1><%= @game.name %></h1>
+    </div>
+</div>
 
-<br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <p>This Game needs <%= @game.player_count %> players</p>
+        </div>
+    </div>
 
-<p>Playing at  <%= @game.court.name %> located <%= @game.court.location %> </p>
+  <div class="row">
+        <div class="col-md-6">
+            <h4>Location:</h4><br>
+            
 
-<br><br>
+        </div>
+        <div class="col-md-6">
+            <p>Playing at  <%= @game.court.name %> located <%= @game.court.location %> </p>
+        </div>
+    </div>
 
-<p>Playing on <%= @game.clean_date %> at <%= @game.clean_time %> </p>
+    <div class="row">
+        <div class="col-md-6">
+             <h4>Date:</h4><br>
+            
+        </div>
+        <div class="col-md-6">
+            
+            <p>Playing on <%= @game.clean_date %> at <%= @game.clean_time %> </p>
+            
+        </div>
+    </div>
 
-<br><br>
+    
+    <div class="row">
+        <div class="col-md-6" >
 
-<p>This Game needs <%= @game.player_count %> players</p>
+            <h3>Players:</h3> 
+                
+        </div>
+        <div class="col-md-6" >
+                <ul>
+                    <li><%= link_to @game.user.name, user_path(@game.user) %> 
+                </ul>
+        </div>
+    </div>
 
-<p>This Game has <%= @game.pg_count %> players</p>
-
-<p>This Game is looking for <%= @game.players_left%> more players</p>
 
 
 
-<h3>Players:</h3> 
-    <ul>
-        <li><%= link_to @game.user.name, user_path(@game.user) %>
+    <div class="row">
+        <div class="col-md-4" style="text-align: center">
+            <%= link_to "Edit This Game", edit_game_path(@game) %> <br><br>
+            <%= link_to "Add Players", new_player_game_path %>
+            <p>This Game is looking for <%= @game.players_left%> more players</p>
+            <p>This Game has <%= @game.pg_count %> players</p>
+        </div>
+
         
-    </ul>
+            <div class="col-md-4" style="text-align: center">
+                <%= link_to "Check Out Other Games", games_path %>
+            </div>
+        
+    
+        <div class="col-md-4" style="text-align: center">
+            <%= form_for(@game, :method => :delete, :remote => true) do |f| %>
+            <%= f.submit :value => "Delete Game" %>
+            <% end %>
+        </div>
+    </div>
 
-<%= link_to "Add Players", new_player_game_path %> <br><br>
-
-<%= link_to "Edit This Game", edit_game_path(@game) %> <br><br>
-
- 
-<%= form_for(@game, :method => :delete, :remote => true) do |f| %>
-<%= f.submit :value => "Delete Game" %>
-<% end %>
-<br><br>
-
-
-
-
-
-
-<%= link_to "Check Out Other Games", games_path %>
+  
+    
 </div>
