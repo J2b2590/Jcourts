@@ -1,34 +1,64 @@
 
-<div class="container">
-<h1>Edit Your Game</h1>
+<div class="container overflow-auto">
+<div class="row">
+    <div class="col-md-12" style="text-align: center">
+    <h1><%= @game.name %></h1>
+    <p style="color: yellow">Edit this game</p>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-6">
 
-<%= form_for (@game) do |f|%>
+        <%= form_for (@game) do |f|%>
+            <% if flash[:errors] %>
+            <% flash[:errors].each do |error| %>
+            <p class="errors" ><%= error %></p>
+            <% end %>
+        <% end %>
 
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-        <p style = " color : red " ><%= error %></p>
-    <% end %>
-   <% end %>
+        <%= f.label :name %><br>
+        <%=f.text_field :name %>
 
+    </div>
 
-    <%= f.label :host_id %> 
-    <%= f.collection_select :host_id, @users, :id, :name %><br>
+    <div class="col-md-6">
 
-    <%= f.label :court_id %>
-    <%= f.collection_select :court_id, @courts, :id, :name %><br>
+        <%= f.label :host_id %> <br>
+        <%= f.collection_select :host_id, @users, :id, :name %>
 
-    <%= f.label :date %>
-    <%=f.text_field :date %><br>
-    
-    <%= f.label :time %>
-     <%=f.time_field :time%><br>
+    </div>
 
-    <%= f.label :player_count %>
-    <%=f.number_field :player_count%><br>
+</div>
+<div class="row">
 
-    <%=f.submit%><br>
+    <div class="col-md-6">
+        <%= f.label :court_id %><br>
+        <%= f.collection_select :court_id, @courts, :id, :name %>
+    </div>
+   
+    <div class="col-md-6">
+        <%= f.label :date %><br>
+        <%=f.date_field :date %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= f.label :time %><br>
+        <%= f.time_select :time, {discard_minute: true, ampm: true} %>
+    </div>
 
-<%end%>
+    <div class="col-md-6">
+        <%= f.label :player_count %><br>
+        <%=f.number_field :player_count%>
+        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <%=f.submit%>
+    </div>
+</div>
+    <%end%>
 
 </div>
