@@ -13,6 +13,16 @@ Rails.application.routes.draw do
   resources :skills
 
   resources :player_skills
+ 
+  resources :welcome, :only => [:new, :create]
+
+
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
+  post '/sessions' => 'sessions#create'
 
   root 'player_games#show'
+
+  
 end
+
